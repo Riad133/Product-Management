@@ -7,13 +7,13 @@
         "use strict";
         var app = angular.module("productManagement");
 
-        app.controller("ProductListCtrl",ProductListCtrl);
+        app.controller("ProductListCtrl",["productResource",ProductListCtrl]);
 
 
-         function ProductListCtrl () {
+         function ProductListCtrl (productResource ) {
             var vm = this;
 
-            vm.products = [
+       /*     vm.products = [
                 {" productId": 1,
                     "productName": "Leaf Rake",
                     "productCode": "GDN-0011",
@@ -36,7 +36,12 @@
                     "category": "toolbox",
                     "tags": ["tool"],
                     "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
-                }];
+                }];*/
+
+
+         productResource.query(function (data) {
+             vm.products=data;
+         });
             vm.showImage= false;
             vm.toggleImage = function () {
                 vm.showImage=!vm.showImage;
