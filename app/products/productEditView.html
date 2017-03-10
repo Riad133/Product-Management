@@ -3,20 +3,24 @@
     {{vm.title}}
     </div>
     <div class="panel-body">
-        <div class="wizards">
-            <a ui-sref=".info">
+        <div class="wizard">
+            <a ui-sref=".info"
+            ui-sref-active="active">
                 Basic information
             </a>
-        </div>
-        <div class="wizards">
-            <a ui-sref=".price">
+
+
+            <a ui-sref=".price" ui-sref-active="active">
                Price
             </a>
-        </div>
-        <div class="wizards">
-            <a ui-sref=".tags">
-                Tags
+
+
+            <a ui-sref=".tags" ui-sref-active="active">
+              Search Tags
             </a>
-        </div>
+
+
     </div>
+    <div ui-view></div>
+</div>
 </div>

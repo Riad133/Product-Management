@@ -40,8 +40,10 @@
                 }
             })
             .state("productEdit",{
+                abstract:true,
                 url:"/products/edit:productId",
                 controller: "ProductEditCtrl as vm",
+                templateUrl: "app/products/productEditView.html",
                 resolve:{
 
                     productResource:"productResource",
@@ -56,15 +58,15 @@
             })
             .state("productEdit.info",{
                 url:"/info",
-                templateUrl:"/app/products/productEditInfoView.html"
+                templateUrl:"app/products/productEditInfoView.html"
             })
             .state("productEdit.price",{
                 url:"/price",
-                templateUrl:"/app/products/productEditPriceView.html"
+                templateUrl:"app/products/productEditPriceView.html"
             })
             .state("productEdit.tags",{
                 url:"/tags",
-                templateUrl:"/app/products/productEditTagsView.html"
+                templateUrl:"app/products/productEditTagsView.html"
             })
 
     }]);

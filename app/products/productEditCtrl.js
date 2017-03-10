@@ -1,11 +1,13 @@
 (
     function () {
 
+        "use strict";
         angular.module("productManagement")
-            .controller("ProductEditCtl",
-            ["product",ProductEditCtl ]);
+            .controller("ProductEditCtrl",
+            ["product",ProductEditCtrl ]);
 
-        function  ProductEditCtl(product  ) {
+        function ProductEditCtrl(product  ) {
+            var vm =this;
 
             vm.product=product;
 
@@ -13,7 +15,7 @@
                 vm.title= "Edit: "+product.productName;
             }
             else {
-                vm.title="Add Product"
+                vm.title="New Product";
             }
         }
     }()
